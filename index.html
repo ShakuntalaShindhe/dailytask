@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h4>Daily Task</h4>
+    <p id="para">this is a paragraph</p>
+    <button onclick="UpdatedContent()">click</button> <br><br>
+    <img id="image" src="https://wallpapers.com/images/hd/shiro-and-shin-chan-cartoon-kowmrj33zx518yu1.jpg"
+        height="300px" width="300px" alt="original image">
+    <button onclick="changeImg()">click to change img</button><br><br>
+    <div id="mydiv">This is to be removed</div>
+</body>
+<script>
+    //1.Create a new <div> element with the text "Hello, World!" 
+    // and append it to the body of the HTML document.
+    let element = document.createElement('div')
+    element.append("Hello, World!")
+    console.log(element)
+    document.body.appendChild(element)
+
+    //2.Find an existing <p> element in the HTML document and change
+    // its text content to "This is updated content."
+    function UpdatedContent() {
+        document.getElementById('para').textContent = 'This is updated content.';
+    }
+
+    // Create an unordered list (<ul>) with three list items (<li>) containing the text
+    // "Item 1", "Item 2", and "Item 3". Append the list to the body of the HTML document.
+    let createul_tag=document.createElement('ul')
+    console.log(createul_tag)
+    let items=['item1','item2','item3']
+    items.forEach(item=>{
+        const li_tag=document.createElement('li')
+        li_tag.textContent=item
+        createul_tag.appendChild(li_tag)
+    })
+    document.body.append(createul_tag)
+
+    //Find an existing <img> element in the HTML document and change its src attribute
+    // to a new image URL.
+    let img = true
+    function changeImg() {
+        let ele = document.getElementById('image')
+        if (img) {
+            ele.src = 'https://wallpaperaccess.com/full/36301.jpg'
+        } else {
+            ele.src = "https://wallpapers.com/images/hd/shiro-and-shin-chan-cartoon-kowmrj33zx518yu1.jpg"
+        }
+        img = !img
+    }
+
+    // Find an existing <div> element in the HTML document and remove it from the DOM.
+      const element1=document.getElementById('mydiv')
+      element1.remove()
+</script>
+
+</html>
